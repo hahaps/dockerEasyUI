@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-table/src/bootstrap-table.css" />
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="bower_components/xterm/src/xterm.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="common/form/styles/form.css">
+    <link rel="stylesheet" href="common/toastr/styles/angular-toastr.css" />
+    <link rel="stylesheet" href="home/styles/main.css">
+    <link rel="stylesheet" href="overview/styles/overview.css">
+    <link rel="stylesheet" href="container/styles/container.css">
+    <link rel="stylesheet" href="image/styles/image.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="dockerEasyUiApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="header">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" ng-href="#/overview">Docker Easy UI</a>
+          </div>
+
+          <div class="collapse navbar-collapse" ng-controller="homeController" id="js-navbar-collapse">
+
+            <ul class="nav navbar-nav">
+              <li class="{{selectedNav=='overview'?'active':''}}"><a ng-href="#/overview">Overview</a></li>
+              <li class="{{selectedNav=='container'?'active':''}}"><a ng-href="#/container">Container</a></li>
+              <li class="{{selectedNav=='image'?'active':''}}"><a ng-href="#/image">Image</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div ng-view></div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <p><span class="glyphicon glyphicon-leaf"></span>
+           <span>Docker API version </span>
+           <a href="https://docs.docker.com/reference/api/docker_remote_api_v1.19" target="_blank">V1.1.9</a>
+           <span>Docker Easy UI Version </span><a href="">V0.0.1</a>
+           <span> | Author </span>
+           <a href="https://github.com/hahaps" target="_blank">Li Xipeng(lixipeng@hihuron.com)</a>
+           <span>&nbsp;from&nbsp;</span>
+           <a href="http://www.hihuron.com" target="_blank">Beijing Huron Technology Co.,Ltd</a>
+        </p>
+      </div>
+    </div>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/bootstrap-table/src/bootstrap-table.js"></script>
+    <script src="bower_components/xterm/src/xterm.js"></script>
+    <script src="bower_components/xterm/addons/fit/fit.js"></script>
+    <script src="bower_components/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="home/homeModule.js"></script>
+        <script src="home/config/router.js"></script>
+        <script src="home/config/http.js"></script>
+        <script src="home/controllers/homeController.js"></script>
+
+        <script src="overview/overviewModule.js"></script>
+        <script src="overview/config/router.js"></script>
+        <script src="overview/controllers/overviewController.js"></script>
+
+        <script src="container/containerModule.js"></script>
+        <script src="container/config/router.js"></script>
+        <script src="container/directives/console.js"></script>
+        <script src="container/controllers/containerController.js"></script>
+        <script src="container/controllers/containerDetailController.js"></script>
+        <script src="container/controllers/containerCreateController.js"></script>
+        <script src="container/controllers/containerConsoleController.js"></script>
+
+        <script src="image/imageModule.js"></script>
+        <script src="image/config/router.js"></script>
+        <script src="image/controllers/imageController.js"></script>
+        <script src="image/controllers/imageDetailController.js"></script>
+        <script src="image/controllers/imageAddController.js"></script>
+
+        <script src="common/rest/restModule.js"></script>
+        <script src="common/rest/services/imageService.js"></script>
+        <script src="common/rest/types/Image.js"></script>
+        <script src="common/rest/types/ImageSample.js"></script>
+        <script src="common/rest/services/containerService.js"></script>
+        <script src="common/rest/types/Container.js"></script>
+        <script src="common/rest/types/ContainerSample.js"></script>
+        <script src="common/rest/services/infoService.js"></script>
+
+        <script src="common/table/tableModule.js"></script>
+        <script src="common/table/directives/tableDirective.js"></script>
+
+        <script src="common/dialog/dialogModule.js"></script>
+        <script src="common/dialog/providers/dialogProvider.js"></script>
+
+        <script src="common/form/formModule.js"></script>
+        <script src="common/form/directives/formDirective.js"></script>
+
+        <script src="common/toastr/directives/angular-toastr.js"></script>
+
+        <script src="common/tooltips/tooltipModule.js"></script>
+        <script src="common/tooltips/directives/tooltipDirective.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

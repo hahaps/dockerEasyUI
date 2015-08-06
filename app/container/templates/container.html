@@ -1,0 +1,29 @@
+<div class="main-view view-container">
+  <h3>Container Show</h3>
+  <div class="action-label">
+    <button class="btn btn-success" ng-click="CreateContainer()">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      <span>Create</span>
+    </button>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        More Action <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="javascript:;" class="{{selectedItem&&selectedItem.state=='up'?'active':''}}" ng-click="Console()">Console</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="javascript:;" class="{{selectedItem&&selectedItem.state=='down'?'active':''}}" ng-click="Action('start')">Start</a></li>
+        <li><a href="javascript:;" class="{{selectedItem&&selectedItem.state=='up'?'active':''}}" ng-click="Action('stop')">Stop</a></li>
+        <li><a href="javascript:;" class="{{selectedItem?'active':''}}" ng-click="Action('restart')">Restart</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="javascript:;" class="{{selectedItem&&selectedItem.state=='up'?'active':''}}" ng-click="Action('pause')">Pause</a></li>
+        <li><a href="javascript:;" class="{{selectedItem&&selectedItem.state=='pause'?'active':''}}" ng-click="Action('unpause')">Unpause</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="javascript:;" class="{{selectedItem&&selectedItem.state=='up'?'active':''}}" ng-click="Action('kill')">Kill</a></li>
+        <li><a href="javascript:;" class="{{selectedItem&&selectedItem.state=='down'?'active':''}}" ng-click="Del()">Delete</a></li>
+      </ul>
+    </div>
+  </div>
+  <common-table class="data-list-label" table-data="containerTableData">
+  </common-table>
+</div>

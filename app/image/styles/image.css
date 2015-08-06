@@ -1,0 +1,25 @@
+.image-add .action-label .input-group{
+  width: 200px;
+  float: right;
+  padding: 0;
+}
+
+.image-add .form-group .glyphicon-search {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+}
+
+.image-add .form-group .col-xs-2 {
+  width: 8%;
+  text-align: right;
+}
+
+.image-add .form-group .col-xs-2.field-repo {
+  width: 15%;
+}
+
+.image-add .form-group .col-xs-4 {
+  width: 35%;
+  padding-left: 5px;
+}

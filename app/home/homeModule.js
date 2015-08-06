@@ -1,0 +1,16 @@
+angular.module('dockerEasyUiApp',
+               ['overview',
+                'container',
+                'image',
+                'rest',
+                'table',
+                'dialog',
+                'form',
+                'toastr',
+                'tooltip',
+                'ngRoute',
+                'ngTouch',
+                'ngAnimate',
+                'ngResource',
+                'ngCookies'
+]);

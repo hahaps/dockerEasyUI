@@ -1,0 +1,79 @@
+.common-overview {
+  margin-bottom: 10px;
+}
+
+.common-overview > .row {
+  margin: 15px 0;
+  background: #f5f5f5;
+  border-radius: 3px;
+  padding: 10px 5px;
+}
+
+.common-overview > .row .overview-detail .overview-chart {
+  height: 150px;
+  width: 30%;
+  margin: 20px 9%;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.common-overview > .row .overview-detail .overview-chart .number-show {
+  height: 100px;
+  line-height: 100px;
+  font-size: 36px;
+  font-weight: 800;
+  font-family: cursive;
+  color: #5cb85c;
+  text-align: center;
+}
+
+.common-overview > .row .overview-detail .overview-chart .number-show-note {
+  text-align: center;
+  color: #ccc;
+}
+
+.common-overview > .row .docker-detail {
+  background: url(/pics/docker.png) no-repeat right center;
+  background-size: 42%;
+}
+
+.common-overview > .row .docker-detail .row {
+  padding-left: 30px;
+  width: 800px;
+}
+
+.common-overview > .row .docker-detail .row .key {
+  display: inline-block;
+  width: 120px;
+  margin: 0 5px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.common-overview > .row .docker-detail .row .value {
+  display: inline-block;
+  width: 200px;
+  font-size: 12px;
+  color: #888;
+}
+
+.common-overview > .row .host-detail {
+  padding-left: 200px;
+  background: url(/pics/linux.png) no-repeat 20px center;
+  background-size: 12%;
+}
+
+.common-overview > .row .host-detail .row .key {
+  display: inline-block;
+  width: 100px;
+  margin: 0 10px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.common-overview > .row .host-detail .row .value {
+  display: inline-block;
+  width: 300px;
+  font-size: 12px;
+  color: #888;
+}

@@ -1,0 +1,55 @@
+<div>
+<form class="common-form">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="close($event)">×</button>
+    <h4 class="modal-title">{{formData.name||'Modal'}}</h4>
+  </div>
+  <div class="modal-body">
+    <div ng-if="formData.panelGroups.length>1" class="panel-steps">
+      <div class="panel-step" ng-repeat="pg in formData.panelGroups">
+        <div class="step-field {{formData.stepIndex==$index?'active': ''}}" ng-click="stepJump($index)">
+          <div class="step-content">{{pg.name}}</div>
+          <div class="step-wraper"></div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-groups">
+      <div class="panel-content" ng-show="formData.stepIndex==$index" ng-repeat="pg in formData.panelGroups">
+        <div class="panel-title">{{pg.name}}</div>
+        <div class="panel-fields">
+          <div class="panel-field" ng-repeat="field in pg.fields">
+            <div class="form-group" ng-if="field.template" ng-include="field.template"></div>
+            <div class="form-group" ng-if="!field.template">
+              <label class="control-label col-xs-3"
+                     for="{{formData.slug}}_{{pg.slug}}_field_{{field.slug}}">{{field.name}}</label>
+              <div class="col-xs-7" ng-switch on="field.type">
+                <input ng-switch-when="text" type="text" class="tooltips {{invalid[pg.slug][field.slug]?'has-error':''}}" ng-model="form[pg.slug][field.slug]"
+                       id="{{formData.slug}}_{{pg.slug}}_field_{{field.slug}}" original-title="field.title" />
+                <input ng-switch-when="password" type="password" class="tooltips {{invalid[pg.slug][field.slug]?'has-error':''}}" ng-model="form[pg.slug][field.slug]"
+                       id="{{formData.slug}}_{{pg.slug}}_field_{{field.slug}}" original-title="field.title" />
+                <input ng-switch-when="email" type="email" class="tooltips {{invalid[pg.slug][field.slug]?'has-error':''}}" ng-model="form[pg.slug][field.slug]"
+                       id="{{formData.slug}}_{{pg.slug}}_field_{{field.slug}}" original-title="field.title" />
+                <input ng-switch-when="number" type="number" class="tooltips {{invalid[pg.slug][field.slug]?'has-error':''}}" ng-model="form[pg.slug][field.slug]"
+                       id="{{formData.slug}}_{{pg.slug}}_field_{{field.slug}}" original-title="field.title" />
+                <input ng-switch-when="checkbox" type="checkbox" class="tooltips {{invalid[pg.slug][field.slug]?'has-error':''}}" ng-model="form[pg.slug][field.slug]"
+                       id="{{formData.slug}}_{{pg.slug}}_field_{{field.slug}}" original-title="field.title" />
+                <textarea ng-switch-when="textarea" class="tooltips {{invalid[pg.slug][field.slug]?'has-error':''}}" ng-model="form[pg.slug][field.slug]"
+                       id="{{formData.slug}}_{{pg.slug}}_field_{{field.slug}}" original-title="field.title"></textarea>
+                <select ng-switch-when="select" class="tooltips {{invalid[pg.slug][field.slug]?'has-error':''}}" ng-model="form[pg.slug][field.slug]"
+                        ng-options="opt.value as opt.text group by opt.group for opt in field.default"
+                        id="{{formData.slug}}_{{pg.slug}}_field_{{field.slug}}" original-title="field.title"></select>
+                <span class="help-block" ng-show="invalid[pg.slug][field.slug]">{{invalid[pg.slug][field.slug]}}</span>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="close($event)">Close</button>
+    <button type="button" class="btn btn-success" ng-click="Submit()">Create</button>
+  </div>
+</form>
+</div>

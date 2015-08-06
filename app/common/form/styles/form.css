@@ -1,0 +1,114 @@
+.modal-header {
+  background-color: #337ab7;
+  border-bottom-color: #2e6da4;
+}
+
+.modal-header h4 {
+  color: #fefefe;
+}
+
+.modal-content {
+  border-radius: 2px;
+}
+
+.panel-steps {
+  position: absolute;
+  left: -4px;
+  height: 100%;
+}
+
+.panel-steps .step-field {
+  height: 36px;
+  margin: 16px;
+  margin-left: 0;
+  position: relative;
+}
+
+.panel-steps .step-field .step-content {
+  transition: width .2s;
+  cursor: pointer;
+  height: 36px;
+  line-height: 36px;
+  font-weight: 800;
+  width: 120px;
+  padding-left: 15px;
+  background: #efefef;
+  border: 1px solid #e6e6e6;
+  color: #888;
+  box-shadow: 0 2px 3px #e6e6e6;
+}
+
+.panel-steps .step-field .step-wraper {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  bottom: -4px;
+  border: 2px solid transparent;
+  border-top: 2px solid #e6e6e6;
+  border-right: 2px solid #e6e6e6;
+}
+
+.panel-steps .step-field.active .step-content {
+  width: 140px;
+  background: #5cb85c;
+  border: 1px solid #4cae4c;
+  box-shadow: 0 2px 3px #5cb85c;
+  color: #fefefe;
+}
+
+.panel-steps .step-field.active .step-wraper {
+  border-top: 2px solid #4cae4c;
+  border-right: 2px solid #4cae4c;
+}
+
+.panel-groups {
+  margin-left: 160px;
+  min-height: 270px;
+  position: relative;
+}
+
+.panel-content {
+}
+
+.panel-groups .panel-title {
+  color: #666;
+  font-size: 16px;
+  font-weight: 800;
+  height: 36px;
+  line-height: 36px;
+}
+
+.panel-groups .form-group label {
+  color: #888;
+}
+
+input,
+textarea,
+select {
+  width: 200px;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  padding: 6px 8px;
+  font-size: 12px;
+  resize: none;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  width: 20px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #5cb85c;
+}
+
+*:focus {
+  outline: none;
+}
+
+.col-xs-2 {
+  padding-top: 6px;
+}
