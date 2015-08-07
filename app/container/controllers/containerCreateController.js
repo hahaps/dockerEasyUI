@@ -47,7 +47,7 @@ angular.module('container').controller('containerCreateController', ['$scope', '
               CpuShares:    form.host.cpuShares,
               CpuPeriod:    form.host.CpuPeriod,
               NetworkMode:  form.host.networkMode,
-              PortBindings: JSON.parse('{' + form.basic.portBindings + '}'),
+              PortBindings: JSON.parse('{' + (form.basic.portBindings || '') + '}'),
               DNS:          form.host.dns ? form.host.dns.split(' ') : []
             }
           };
