@@ -56,10 +56,12 @@ If you want to make contribution to this project(With my greatest gratitude). Pl
 
 ### Todo:
 * Wiki
+* i18n
 * Creat image from dockerFile.
 * Events search
 * History search
 * Log search
+* Muti docker management
 * Some usefull apps(mysql, redis, apach, tomcat, etc.)
 * Unit tests
 

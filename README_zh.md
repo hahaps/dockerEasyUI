@@ -56,10 +56,12 @@ DockerEasyUI 提供一个简洁管理docker的web入口. 你可以通过浏览�
 
 ### Todo:
 * Wiki
+* i18n
 * 从 dockerFile 创建镜像
 * Events 查询
 * 历史查询
 * 日志查询
+* 多 docker 管理
 * 一些常用应用模版(mysql, redis, apach, tomcat, etc.)
 * 单元测试
 
